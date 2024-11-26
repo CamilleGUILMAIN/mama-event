@@ -2,6 +2,10 @@ class CharitiesController < ApplicationController
   before_action :set_charity, only: [:edit, :update]
   before_action :authenticate_user!
 
+  def index
+
+  end
+
   def new
     @charity = Charity.new
   end
