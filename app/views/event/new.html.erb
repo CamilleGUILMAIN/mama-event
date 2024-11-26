@@ -1,0 +1,11 @@
+<h1>Event#new</h1>
+<p>Find me in app/views/event/new.html.erb</p>
+<%= simple_form_for @event do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :date, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12, discard_day: true,
+                              order: [:month, :year] %>
+  <%= f.input :accepts, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+  <%= f.button :submit %>
+<% end %>
