@@ -1,16 +1,15 @@
-class EventController < ApplicationController
+class EventsController < ApplicationController
   def new
     @event = Event.new
-    raise!
   end
 
   def create
     @event = Event.new(event_params)
-    @event.date = Date.parse(params[:events][:date])
-    if @event.save
+    @event.date = Date.parse(params[:event][:date])
+    if @event.save!
       redirect_to events_path
     else
-      render "event/new",status: :unprocessable_entity
+      render "events/new",status: :unprocessable_entity
     end
   end
 
