@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_26_152046) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_26_153547) do
   create_table "charities", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -19,6 +19,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_26_152046) do
     t.string "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_charities_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -114,6 +116,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_26_152046) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "charities", "users"
   add_foreign_key "events", "charities"
   add_foreign_key "options", "tickets"
   add_foreign_key "orders", "options", column: "options_id"
