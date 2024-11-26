@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'event/new'
-  get 'event/show'
   devise_for :users
   resources :charities
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -11,6 +9,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  # 
+  #
   resources :events
 end
