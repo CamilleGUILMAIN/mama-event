@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  participation: one
+  quantity: 1
+  options: one
+
+two:
+  participation: two
+  quantity: 1
+  options: two
