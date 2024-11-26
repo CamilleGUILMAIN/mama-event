@@ -119,14 +119,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_26_164913) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "charities", "users"
-  add_foreign_key "events", "charities"
-  add_foreign_key "options", "tickets"
-  add_foreign_key "orders", "options", column: "options_id"
-  add_foreign_key "orders", "participations"
-  add_foreign_key "participants", "teams"
-  add_foreign_key "participations", "participants"
-  add_foreign_key "participations", "payments"
-  add_foreign_key "participations", "tickets"
-  add_foreign_key "tickets", "events"
 end
