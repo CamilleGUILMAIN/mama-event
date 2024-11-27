@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.date = Date.parse(params[:event][:date])
+    @event.charity = Charity.first
     if @event.save!
       redirect_to events_path
     else
