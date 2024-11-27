@@ -4,6 +4,7 @@ class ParticipantsController < ApplicationController
   end
 
   def show
+    @participant = participant.find(params(:id))
   end
 
   def new
